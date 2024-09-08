@@ -1,65 +1,140 @@
-/* Basic reset */
-body, ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #fff;
+    margin: 10;
+    font-family: Helvetica, sans-serif;
+  }
+  
+  a {
     color: #000;
-}
-
-header {
-    background-color: #ffffff; /* White background */
-    padding: 10px 20px;
-    position: relative;
-    text-align: center;
-}
-
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-/* Sidebar toggle button (hamburger icon) */
-.sidebar-toggle {
-    display: none; /* Hide the toggle button by default */
-    background-color: #333;
-    color: white;
-    border: none;
-    padding: 10px;
-    font-size: 20px;
-    cursor: pointer;
-}
-
-/* Sidebar styles */
-.sidebar {
-    display: none; /* Hide sidebar by default */
+  }
+  
+  /* header */
+  
+  .header {
+    background-color: #fff;
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 250px;
+    width: 100%;
+    z-index: 3;
+  }
+  
+  .header ul {
+    margin: 0px;
+    padding: 15px;
+    list-style: none;
+    overflow: hidden;
+    background-color: #fff;
+  }
+  
+  .header li a {
+    display: block;
+    padding: 20px 20px;
+    text-decoration: none;
+  }
+  
+  .header .logo {
+    display: block;
+    float: left;
+    font-size: 2em;
+    padding: 10px 20px;
+    text-decoration: none;
+  }
+  
+  /* menu */
+  
+  .header .menu {
+    clear: both;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+  }
+  
+  /* menu icon */
+  
+  .header .menu-icon {
+    cursor: pointer;
+    padding: 28px 20px;
+    position: relative;
+    user-select: none;
+    float: right;
+  }
+  
+  .header .menu-icon .navicon {
+    background: #333;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background .2s ease-out;
+    width: 18px;
+  }
+  
+  .header .menu-icon .navicon:before,
+  .header .menu-icon .navicon:after {
+    background: #333;
+    content: '';
+    display: block;
     height: 100%;
-    background-color: #ffffff; /* White background */
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    overflow-y: auto;
-    transition: transform 0.3s ease;
-    transform: translateX(-100%); /* Initially hide sidebar off-screen */
-}
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+  }
+  
+  .header .menu-icon .navicon:before {
+    top: 5px;
+  }
+  
+  .header .menu-icon .navicon:after {
+    top: -5px;
+  }
+  
+  /* menu btn */
+  
+  .header .menu-btn {
+    display: none;
+  }
+  
+  .header .menu-btn:checked ~ .menu {
+    max-height: 240px;
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon .navicon {
+    background: transparent;
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon .navicon:before {
+    transform: rotate(-45deg);
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon .navicon:after {
+    transform: rotate(45deg);
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+  .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+    top: 0;
+  }
+  
+  /* 48em = 768px */
+  
+  @media (min-width: 48em) {
+    .header li {
+      float: left;
+    }
+    .header li a {
+      padding: 20px 30px;
+    }
+    .header .menu {
+      clear: none;
+      float: right;
+      max-height: none;
+    }
+    .header .menu-icon {
+      display: none;
+    }
+  }
 
-.sidebar.active {
-    display: block; /* Show sidebar */
-    transform: translateX(0); /* Slide in sidebar */
-}
 
 .nav-list {
     display: flex;
     flex-direction: row; /* Default layout for large screens */
-    justify-content: center;
+    justify-content: right;
     padding: 0;
 }
 
@@ -68,28 +143,29 @@ header {
     padding: 10px 20px;
     color: #000000; /* Black text */
     text-decoration: none;
+    text-transform: uppercase;
+    font-size: 15px;
 }
 
 .nav-item a:hover {
-    background-color: #f0f0f0; /* Light grey background on hover */
+    color: red;
 }
 
-/* Dropdown menu */
+/* Dropdown Menu */
 .dropdown-content {
     display: none;
     position: absolute;
     background-color: #ffffff; /* White background for dropdown */
-    border: 1px solid #ccc; /* Light border for dropdown */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
 }
 
+/* Dropdown Items */
 .dropdown-content a {
-    padding: 10px 20px;
+    padding: 8px 15px; /* Adjust padding for spacing */
     color: #000000; /* Black text for dropdown items */
     text-decoration: none;
-}
-
-.dropdown-content a:hover {
-    background-color: #f0f0f0; /* Light grey background on hover */
+    display: block; /* Ensure items are block elements */
 }
 
 /* Show dropdown on hover */
@@ -104,22 +180,35 @@ main {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    padding: 10px 20px 10px; /* Padding to allow for fixed header */
+    padding: 80px 20px 20px;
+    background-color: #fff;
+}
+
+.entry {
+    page-break-after: always; /* Forces a page break after each entry when printing */
 }
 
 .entry-separator {
     border: none; /* Remove the default border */
     border-top: 1px solid black; /* Add a thin black line */
-    margin: 20px 0; /* Space above and below the line */
+    margin: 20px auto; /* Space above and below the line */
+    width: 100%; /* Ensure the line spans the full width of the section */
+    max-width: 500px; /* Match the width of the section */
 }
 
 /* Sections */
 section {
-    width: 75%;
-    max-width: 1200px;
-    margin-bottom: 60px;
+    width: 100%; /* Takes up the full width of its container */
+    max-width: 500px; /* Limit the width of the content */
+    margin: 0 auto 10px auto; /* Center the section and add bottom margin */
     line-height: 1.8;
     text-align: left;
+    padding: 20px; /* Optional: Padding inside each entry */
+    border-radius: 8px; /* Optional: Rounded corners */
+}
+
+.journal-entry p {
+    color: grey; /* Change the text color of paragraphs within journal entries to gray */
 }
 
 section img {
@@ -143,30 +232,51 @@ video {
 
 /* Footer */
 footer {
-    background-color: #fff;
-    color: #000;
-    padding: 20px 40px;
-    width: 100%;
+    padding: 20px;
     text-align: center;
     border-top: 1px solid #ddd;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .sidebar-toggle {
-        display: block; /* Show the toggle button */
-    }
-
-    .navbar .nav-list {
-        display: none; /* Hide the main navigation links when sidebar is visible */
-    }
-
-    .sidebar {
-        display: flex; /* Show sidebar in mobile view */
-    }
-
-    .sidebar.active .nav-list {
-        display: flex;
-        flex-direction: column; /* Stack the links vertically */
-    }
+.footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.social-icon {
+    margin: 0 15px; /* Spacing between icons */
+}
+
+.social-icon img {
+    width: 30px; /* Adjust the size of the icons */
+    height: auto;
+    transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.social-icon img:hover {
+    transform: scale(1.2); /* Slightly enlarge the icon on hover */
+}
+
+/* General link styles */
+a {
+    color: inherit; /* Inherit the color from the parent element */
+    text-decoration: none; /* Remove the underline by default */
+}
+
+/* Visited link styles */
+a:visited {
+    color: inherit; /* Keep the same color as non-visited links */
+    text-decoration: none; /* Keep the same decoration as non-visited links */
+}
+
+/* Hover state for links */
+a:hover {
+    color: red; /* Optionally, change color on hover */
+}
+
+/* Active link state */
+a:active {
+    color: inherit; /* Keep the color unchanged when clicked */
+    text-decoration: none; /* Keep the same decoration when clicked */
+}
+

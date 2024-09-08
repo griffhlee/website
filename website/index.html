@@ -7,64 +7,84 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <header>
-                <ul class="nav-list">
-                    <li class="nav-item"><a href="home.html">Home</a></li>
-                    <li class="nav-item dropdown">
-                        <a href="#" class="dropbtn">Studio</a>
-                        <div class="dropdown-content">
-                            <a href="bluebird.html">Bluebird</a>
-                            <a href="kollektive.html">Kollektive</a>
-                            <a href="picturebook.html">Picture Book</a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a href="journal.html" class="dropbtn">Journal</a>
-                        <div class="dropdown-content">
-                            <a href="art.html">Art</a>
-                            <a href="music.html">Music</a>
-                            <a href="film.html">Film</a>
-                        </div>
-                    </li>
-                    <li class="nav-item"><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-
+    <header class="header">
+        <a href="" class="logo"> 
+            <img src="L.png" alt="logo" class="logo">
+        </a>
+        <input class="menu-btn" type="checkbox" id="menu-btn" />
+        <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+        <ul class="menu">
+            <li class="nav-item"><a href="home.html">Home</a></li>
+            <li class="nav-item dropdown">
+                <a href="#" class="dropbtn">Studio</a>
+                <div class="dropdown-content">
+                    <a href="bluebird.html">Bluebird</a>
+                    <a href="kollektive.html">Kollektive</a>
+                    <a href="picturebook.html">Picture Book</a>
+                </div>  
+            </li>
+            <li class="nav-item dropdown">
+                <a href="journal.html" class="dropbtn">Journal</a>
+                <div class="dropdown-content">
+                    <a href="art.html">Art</a>
+                    <a href="music.html">Music</a>
+                    <a href="film.html">Film</a>
+                </div>
+            </li>
+            <li class="nav-item"><a href="contact.html">Contact</a></li>
+        </ul>
+      </header>
+    
     <main>
-        <section>
-            <h2>Featured Video</h2>
-            <div class="video-container">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/xIkF90hML_k?autoplay=1&loop=1&playlist=xIkF90hML_k"
-                    title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-                </iframe>
-            </div>
+        <section class="journal-entry">
+            <h1>place des vosges</h1>
+            <h3><a href="videos.html">Studio | Video</a></h3>
+            <video controls>
+                <source src="vosges.mov" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <a href="https://www.instagram.com/p/C_TSFAAAkt3/">instagram post</a>
+        </section>
+        <div class="entry-separator"></div>
+
+        <section class="journal-entry">
+            <h1>Bags - Clairo</h1>
+            <h3><a href="music.html">Journal | Music</a></h3>
+            <img src="clairo.jpg" alt="clairo" class="bags">
+            <p>This is the content of the first journal entry.</p>
         </section>
 
-        <hr class="entry-separator">
+        <div class="entry-separator"></div>
 
-        <section>
-            <h2>Journal Entry</h2>
-            <p>This is an example of a journal entry text. The images are centered, but the text is left-aligned.</p>
-            <img src="image.jpg" alt="Sample Image">
+        <section class="journal-entry">
+            <h2>Journal Entry 2</h2>
+            <p>This is the content of the second journal entry.</p>
         </section>
 
-        <hr class="entry-separator">
 
-        <section>
-            <h2>Another Journal Entry</h2>
-            <p>This is another example of a journal entry.</p>
-            <img src="another-image.jpg" alt="Sample Image">
+        <div class="entry-separator"></div>
+
+        <section class="journal-entry">
+            <h2>Journal Entry 3</h2>
+            <p>This is the content of the third journal entry.</p>
         </section>
     </main>
 
     <footer>
-        <div class="footer-content">
-            <p>Instagram | LinkedIn</p>
+       <img src="horse.png" alt="horse" class="horse"> 
+            <div class="footer-content">
+            <a href="https://www.instagram.com/griffin.lee" target="_blank" class="social-icon">
+                <img src="instagram-icon.png" alt="Instagram">
+            </a>
+            <a href="https://www.youtube.com/@griffinhlee" target="_blank" class="social-icon">
+                <img src="youtube-icon.png" alt="YouTube">
+            </a>
+            <a href="https://www.linkedin.com/in/-griffinlee" target="_blank" class="social-icon">
+                <img src="linkedin-icon.png" alt="LinkedIn">
+            </a>
         </div>
     </footer>
+    
 
     <script src="scripts.js"></script>
 </body>
