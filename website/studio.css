@@ -10,7 +10,10 @@ body {
     margin: 0;
     font-family: Helvetica, sans-serif;
 }
-
+.journal-entry .title {
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Optional shadow for better contrast */
+}
 /* Header styles */
 .header {
     background-color: #fff;
@@ -178,8 +181,8 @@ main {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    padding: 80px 20px 20px;
-    background-color: #fff;
+    padding: 100px 20px 20px;
+    background-color: black;
 }
 
 .entry {
@@ -188,7 +191,7 @@ main {
 
 .entry-separator {
     border: none; /* Remove the default border */
-    border-top: 1px solid black; /* Add a thin black line */
+    border-top: 1px solid white; /* Add a thin black line */
     margin: 20px auto; /* Space above and below the line */
     width: 100%; /* Ensure the line spans the full width of the section */
     max-width: 500px; /* Match the width of the section */
@@ -213,6 +216,11 @@ section img {
     display: block;
     margin: 20px auto; /* Center images */
     max-width: 100%;
+    transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+section img:hover {
+    transform: scale(1.1); /* Slightly enlarge the icon on hover */
 }
 
 .video-container {
@@ -293,3 +301,61 @@ a:active {
     color:white; /* Text color on hover */
 }
 
+/* General Styles */
+* {
+    box-sizing: border-box;
+  }
+  
+  /* Center website */
+  .main {
+    max-width: 1000px;
+    margin: auto;
+  }
+  
+  h1 {
+    font-size: 50px;
+    word-break: break-all;
+  }
+  
+  .row {
+    margin: 8px -16px;
+  }
+  
+  /* Add padding BETWEEN each column (if you want) */
+  .row,
+  .row > .column {
+    padding: 8px;
+  }
+  
+  /* Create four equal columns that floats next to each other */
+  .column {
+    float: left;
+    width: 25%;
+  }
+  
+  /* Clear floats after rows */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Content */
+  .content {
+    background-color: white;
+    padding: 10px;
+  }
+  
+  /* Responsive layout - makes a two column-layout instead of four columns */
+  @media screen and (max-width: 900px) {
+    .column {
+      width: 50%;
+    }
+  }
+  
+  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+    }
+  }

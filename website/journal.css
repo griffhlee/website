@@ -10,7 +10,10 @@ body {
     margin: 0;
     font-family: Helvetica, sans-serif;
 }
-
+.journal-entry .title {
+    color: white;
+    text-align: left;
+}
 /* Header styles */
 .header {
     background-color: #fff;
@@ -18,6 +21,7 @@ body {
     width: 100%;
     z-index: 3;
     padding: 20px 0px;
+    border-bottom: 5px solid #dbc8b1;
 }
 
 /* Header menu styles */
@@ -178,8 +182,8 @@ main {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    padding: 80px 20px 20px;
-    background-color: #fff;
+    padding: 100px 10px 20px;
+    background-color: #152b89;
 }
 
 .entry {
@@ -188,8 +192,8 @@ main {
 
 .entry-separator {
     border: none; /* Remove the default border */
-    border-top: 1px solid black; /* Add a thin black line */
-    margin: 20px auto; /* Space above and below the line */
+    border-top: 1px solid white; /* Add a thin black line */
+    margin: 0px auto; /* Space above and below the line */
     width: 100%; /* Ensure the line spans the full width of the section */
     max-width: 500px; /* Match the width of the section */
 }
@@ -198,22 +202,39 @@ main {
 section {
     width: 100%; /* Takes up the full width of its container */
     max-width: 500px; /* Limit the width of the content */
-    margin: 0 auto 10px auto; /* Center the section and add bottom margin */
+    margin: 0 auto 0 auto; /* Center the section and add bottom margin */
     line-height: 1.8;
     text-align: left;
-    padding: 20px; /* Optional: Padding inside each entry */
+    padding: 0px; /* Optional: Padding inside each entry */
     border-radius: 8px; /* Optional: Rounded corners */
 }
 
 .journal-entry p {
-    color: grey; /* Change the text color of paragraphs within journal entries to gray */
+    color: white; /* Change the text color of paragraphs within journal entries to gray */
 }
 
 section img {
     display: block;
     margin: 20px auto; /* Center images */
     max-width: 100%;
+    transition: transform 0.3s ease; /* Smooth hover effect */
 }
+
+section img:hover {
+    transform: scale(1.1); /* Slightly enlarge the icon on hover */
+}
+
+.record {
+    display: block;
+    margin: 20px auto; /* Center the image */
+    max-width: 100%;
+    transition: transform 0.8s ease; /* Smooth hover effect */
+}
+
+.record:hover {
+    transform: rotate(360deg); /* Spin the image 360 degrees on hover */
+}
+
 
 .video-container {
     display: flex;
@@ -232,7 +253,7 @@ video {
 footer {
     padding: 20px;
     text-align: center;
-    border-top: 1px solid #ddd;
+    border-top: 5px solid #dbc8b1;
 }
 
 .footer-content {
@@ -240,6 +261,7 @@ footer {
     justify-content: center;
     align-items: center;
 }
+
 
 .social-icon {
     margin: 0 15px; /* Spacing between icons */
@@ -293,3 +315,61 @@ a:active {
     color:white; /* Text color on hover */
 }
 
+/* General Styles */
+* {
+    box-sizing: border-box;
+  }
+  
+  /* Center website */
+  .main {
+    max-width: 1000px;
+    margin: auto;
+  }
+  
+  h1 {
+    font-size: 50px;
+    word-break: break-all;
+  }
+  
+  .row {
+    margin: 8px -16px;
+  }
+  
+  /* Add padding BETWEEN each column (if you want) */
+  .row,
+  .row > .column {
+    padding: 8px;
+  }
+  
+  /* Create four equal columns that floats next to each other */
+  .column {
+    float: left;
+    width: 25%;
+  }
+  
+  /* Clear floats after rows */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Content */
+  .content {
+    background-color: white;
+    padding: 10px;
+  }
+  
+  /* Responsive layout - makes a two column-layout instead of four columns */
+  @media screen and (max-width: 900px) {
+    .column {
+      width: 50%;
+    }
+  }
+  
+  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+    }
+  }
