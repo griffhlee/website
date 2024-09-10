@@ -129,7 +129,6 @@ body {
     }
 }
 
-
 .nav-list {
     display: flex;
     flex-direction: row; /* Default layout for large screens */
@@ -209,8 +208,11 @@ section {
 }
 
 .journal-entry p {
-    color: grey; /* Change the text color of paragraphs within journal entries to gray */
+    color: white; /* Change the text color of paragraphs within journal entries to gray */
 }
+.journal-entry:hover .overlay {
+    opacity: 1;
+  }
 
 section img {
     display: block;
@@ -218,6 +220,47 @@ section img {
     max-width: 100%;
     transition: transform 0.3s ease; /* Smooth hover effect */
 }
+
+/* Container for the image */
+.image-container {
+    position: relative;
+    display: inline-block; /* Keep the container size relative to the image */
+}
+
+.image-container img {
+    width: 100%; /* Ensure the image scales to fit its container */
+    display: block;
+}
+
+/* The overlay text and background */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7); /* Dark background with transparency */
+    color: white; /* Text color */
+    display: flex; /* Use flexbox to center text */
+    justify-content: center; /* Horizontally center the text */
+    align-items: center; /* Vertically center the text */
+    opacity: 0; /* Start with the overlay hidden */
+    transition: opacity 0.3s ease; /* Smooth transition */
+}
+
+/* Text inside the overlay */
+.overlay-text {
+    font-size: 1.5rem; /* Adjust font size */
+    text-align: center; /* Center the text */
+    padding: 10px; /* Optional: padding inside the text */
+    color: white;
+}
+
+/* Show the overlay when hovering over the container */
+.image-container:hover .overlay {
+    opacity: 1;
+}
+
 
 section img:hover {
     transform: scale(1.1); /* Slightly enlarge the icon on hover */

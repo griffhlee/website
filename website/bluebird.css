@@ -212,6 +212,10 @@ section {
     color: grey; /* Change the text color of paragraphs within journal entries to gray */
 }
 
+.journal-entry h2 {
+    color: white;
+}
+
 section img {
     display: block;
     margin: 20px auto; /* Center images */
